@@ -1,7 +1,3 @@
-// NSanghvi
-// Solar ID: 112698300
-// Section R04
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -19,7 +15,7 @@ public class BloodType implements Serializable {
      * determines if blood types are compatible
      *
      * @param recipient person to receive transplant
-     * @param donor person to give transplant
+     * @param donor     person to give transplant
      * @return boolean
      */
     public static boolean isCompatible(BloodType recipient, BloodType donor) {
