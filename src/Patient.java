@@ -1,7 +1,3 @@
-// NSanghvi
-// Solar ID: 112698300
-// Section R04
-
 import java.io.Serializable;
 
 public class Patient implements Comparable, Serializable {
@@ -23,12 +19,12 @@ public class Patient implements Comparable, Serializable {
     /**
      * Patient constructor
      *
-     * @param name name of patient
-     * @param organ organ of patient to be received or donated
-     * @param age age of patient
+     * @param name      name of patient
+     * @param organ     organ of patient to be received or donated
+     * @param age       age of patient
      * @param bloodType bloodtype of patient
-     * @param ID ID of patient
-     * @param isDonor marker for if patient is donor or recipient
+     * @param ID        ID of patient
+     * @param isDonor   marker for if patient is donor or recipient
      */
     public Patient(String name, String organ, int age, BloodType bloodType, int ID, boolean isDonor) {
         this.name = name;
@@ -48,6 +44,17 @@ public class Patient implements Comparable, Serializable {
     public int compareTo(Object o) {
         Patient p1 = (Patient) o;
         return Integer.compare(this.ID, p1.getID());
+    }
+
+
+    /**
+     * String representation of patient object
+     *
+     * @return String
+     */
+    public String toString() {
+        String line = "|";
+        return String.format("%3s%4s%-20s%s%3s%3s%6s%10s%6s%7s%2s", getID(), line, getName(), line, getAge(), line, getOrgan(), line, getBloodType().getBloodType(), line, getConnections());
     }
 
     /**
@@ -160,6 +167,7 @@ public class Patient implements Comparable, Serializable {
 
     /**
      * Creates string representation of connections found
+     *
      * @return String
      */
     public String getConnections() {
@@ -168,6 +176,7 @@ public class Patient implements Comparable, Serializable {
 
     /**
      * Sets string representation of connections found
+     *
      * @param connections number of connections a patient has
      */
     public void setConnections(String connections) {
